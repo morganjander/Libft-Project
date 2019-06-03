@@ -8,4 +8,5 @@ void	*ft_memalloc(size_t size)
 	if (!mem)
 		return (NULL);
 	ft_bzero(mem, size);
+	return (mem) ;
 }
