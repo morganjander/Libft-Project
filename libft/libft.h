@@ -4,7 +4,7 @@
 //Part1
 void	*ft_memset(void *, int, size_t);
 void	ft_bzero(void *, size_t);
-
+void	*ft_memcpy(void *, const void *, size_t);
 
 
 
