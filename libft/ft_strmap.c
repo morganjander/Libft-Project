@@ -1,19 +1,20 @@
 #include "libft.h"
 
-char * ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	if(!s)
+	char	*freshstr;
+	int		i;
+
+	if (s == NULL || f == NULL)
 		return (NULL);
-	char *freshstr;
 	freshstr = ft_strnew(ft_strlen(s));
-	if (!freshstr)
+	if (freshstr == NULL)
 		return (NULL);
-	int i;
 	i = 0;
-	while (*(s + i))
+	while (s[i] != '\0')
 	{
-		*(freshstr + i+) = f(s + i);
-		++i:
+		freshstr[i] = (*f)(s[i]);
+		i++;
 	}
 	return (freshstr);
 }

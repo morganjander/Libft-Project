@@ -6,12 +6,12 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 12:44:41 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/06 12:52:19 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/09 13:37:22 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void *ft_memcpy(void *str1, const void *str2, int c, size_t n)
+void *ft_memccpy(void *str1, const void *str2, int c, size_t n)
 {
 	size_t i;
 	char *ptr;
