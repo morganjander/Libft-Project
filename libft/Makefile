@@ -29,6 +29,9 @@ SRC		= ft_memset.c \
 			ft_isprint.c \
 			ft_toupper.c \
 			ft_tolower.c \
+			ft_strlen.c \
+			ft_isupper.c \
+			ft_islower.c \
 			ft_memalloc.c \
 			ft_memdel.c \
 			ft_strnew.c \
@@ -66,8 +69,8 @@ OBJ		= $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	echo "Compiling $(NAME)..."
-	gcc $(CFLAGS) $(SRC) -c -I libft.h  
+	@echo "Compiling $(NAME)..."
+	gcc $(CFLAGS) -c $(SRC) -I libft.h  
 	ar rc $(NAME) $(OBJ) 					
 	ranlib $(NAME)
 
