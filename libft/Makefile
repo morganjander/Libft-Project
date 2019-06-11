@@ -1,6 +1,6 @@
-NAME	= libft.a
-CFLAGS	= -Wall -Werror -Wextra
-SRC		=	ft_memset.c \
+NAME		= libft.a
+CFLAGS		= -Wall -Werror -Wextra
+SRC		= ft_memset.c \
 			ft_bzero.c \
 			ft_memcpy.c \
 			ft_memccpy.c \
@@ -65,17 +65,17 @@ OBJ		= $(SRC:.c=.o)
 
 all : $(NAME)
 
-$(NAME) :
+$(NAME) : $(OBJ)
 	echo "Compiling $(NAME)..."
 	gcc $(CFLAGS) $(SRC) -c -I libft.h  
 	ar rc $(NAME) $(OBJ) 					
 	ranlib $(NAME)
 
 clean : 
-	echo "Removing object files..."
-	/bin/rm -f $(OBJ)
+	@echo "Removing object files..."
+	@rm -rf $(OBJ)
 
 fclean : clean
-	/bin/rm -f $(NAME)
+	@rm -rf $(NAME)
 
 re : fclean all
