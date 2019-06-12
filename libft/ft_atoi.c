@@ -6,10 +6,9 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 09:12:34 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/03 11:22:13 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/12 07:45:20 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -39,7 +38,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-
-	
-
-

@@ -6,7 +6,7 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 13:17:21 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/10 15:05:48 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/12 09:51:05 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	ptr = (unsigned char *)b;
 	i = 0;
-	while (len > 0)  /*while (i < len)
-					   *(ptr + i++) = c; */
+	while (i < len)
 	{
 		ptr[i] = c;
-		len--;
 		i++;
 	}
 	return (b);
