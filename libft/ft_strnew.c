@@ -12,20 +12,10 @@ char *ft_strnew(size_t size)
 */
 char	*ft_strnew(size_t size)
 {
-	char	*f;
-	int		j;
-	int		l;
-
-	l = size + 1;
-	j = 0;
-	f = (char *)malloc(l);
-	if (f == 0)
-		return (NULL);
-	while (l > 0)
-	{
-		f[j] = '\0';
-		l--;
-		j++;
-	}
-	return (f);
+	char *new;
+	new = NULL;
+	new = (char *)ft_memalloc(size);
+	if (!new)
+        return (NULL);
+    return (new);
 }
