@@ -23,9 +23,10 @@ int	ft_atoi(const char *str)
 		i++;
 
 	if(str[i] == '-' || str[i] == '+')
-		sign = (str[i] == '-') ? -1 : 1;
+    {
+        sign = (str[i] == '-') ? -1 : 1;
 		i++;
-	
+	}
 	while (ft_isdigit(str[i])){
 		if (res > INT_MAX / 10 || (res == INT_MAX / 10 && str[i] - '0' > 7)){
 			if (sign == 1)

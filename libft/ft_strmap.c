@@ -5,12 +5,12 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*freshstr;
 	int		i;
 
-	if (s == NULL || f == NULL)
-		return (NULL);
-	freshstr = ft_strnew(ft_strlen(s));
-	if (freshstr == NULL)
-		return (NULL);
 	i = 0;
+	if ( !s || !f )
+		return (NULL);
+	freshstr = ft_strnew(ft_strlen(s) + 1);
+	if (!freshstr)
+		return (NULL);
 	while (s[i] != '\0')
 	{
 		freshstr[i] = (*f)(s[i]);

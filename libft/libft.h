@@ -82,6 +82,7 @@ void				ft_putnbr_fd(int n, int fd);
 size_t				ft_strlen(const char *s);
 int				ft_islower(int c);
 int				ft_isupper(int c);
+int             ft_iswhitespace(int c);
 
 
 
