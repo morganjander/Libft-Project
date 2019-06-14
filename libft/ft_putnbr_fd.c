@@ -6,14 +6,14 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 07:40:26 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/10 07:48:20 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/14 13:00:07 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

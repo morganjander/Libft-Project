@@ -1,17 +1,26 @@
- #include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/14 12:26:03 by mjander           #+#    #+#             */
+/*   Updated: 2019/06/14 12:26:12 by mjander          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
-	size_t len;
-
-	i = 0
-	len = ft_strlen(s);
-	while (i < len)
+	while (*s)
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i++;
+		if (*s == c)
+			return ((char *)s);
+		s++;
 	}
+	if (*s == c)
+		return ((char *)s);
 	return (NULL);
 }

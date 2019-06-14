@@ -1,17 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/14 12:25:44 by mjander           #+#    #+#             */
+/*   Updated: 2019/06/14 13:20:38 by mjander          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t dlen;
-	size_t slen;
+	size_t	i;
+	size_t	len;
 
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-
-	if (dstsize < dlen + 1)
-		return (slen + dstsize);
-	if (dstsize > dst_len + 1)
-		dst = ft_memcpy((dst + len), src, slen):
-	return (dlen + slen);
-
+	i = 0;
+	len = 0;
+	while (dst[len] && len < dstsize)
+		len++;
+	i = len;
+	while (src[len - i] && len + 1 < dstsize)
+	{
+		dst[len] = src[len - i];
+		len++;
+	}
+	if (i < dstsize)
+		dst[len] = '\0';
+	return (i + ft_strlen(src));
 }

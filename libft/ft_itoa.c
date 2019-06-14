@@ -1,5 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/14 12:39:18 by mjander           #+#    #+#             */
+/*   Updated: 2019/06/14 13:25:43 by mjander          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 static int	sft_strlen(int n)
 {
@@ -10,6 +21,7 @@ static int	sft_strlen(int n)
 		i++;
 	return (i);
 }
+
 char	*ft_itoa(int n)
 {
 	char *s;
@@ -27,7 +39,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	s[slen - 1] = ncpy % 10 + '0';
 	while (ncpy /= 10)
-		s[--str] = ncpy % 10 + '0';
+		s[--slen] = ncpy % 10 + '0';
 	if (n < 0)
 		*(s + 0) = '-';
 	return (s);

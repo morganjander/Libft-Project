@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/14 12:37:50 by mjander           #+#    #+#             */
+/*   Updated: 2019/06/14 13:03:28 by mjander          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -10,10 +22,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len2 = ft_strlen(s2);
 	freshstr = ft_strnew(len1 + len2 + 1);
 	if (!freshstr)
-		return 0;
+		return (0);
 	freshstr = (char *)ft_memcpy(freshstr, s1, len1);
-	//(freshstr + len1) = (char *)ft_memcpy((freshstr + len1), s2, len2);
+	/*(freshstr + len1) = (char *)ft_memcpy((freshstr + len1), s2, len2);
+	  */
 	freshstr[len1 + len2] = '\0';
 	return (freshstr);
-
 }
