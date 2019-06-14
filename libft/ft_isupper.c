@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	isupper(int c)
+int	ft_isupper(int c)
 {
 	return (c >= 'A' && c <= 'Z' ? 1 : 0);
 }
