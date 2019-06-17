@@ -21,7 +21,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	i = ft_strlen(needle) - 1;
 	j = i;
 	found = 0;
-	while (i < ft_strlen(haystack) && haystck[i] && needle[j])
+	while (i < ft_strlen(haystack) && haystack[i] && needle[j])
 	{
 		if (haystack[i] == needle[j])
 		{

@@ -18,6 +18,6 @@ char	*ft_strcpy(char *dst, const char *src)
 	if (!dst || !src)
 		return (NULL);
 	len = ft_strlen(src);
-	dst = ((char *)ft_memcpy(dst, src, (len + 1));
+	dst = ((char *)ft_memcpy(dst, src, (len + 1)));
 	return (dst);
 }
