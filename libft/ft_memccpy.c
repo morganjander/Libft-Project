@@ -15,18 +15,23 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t i;
+	char * dst1;
+	char const *src1;
+	unsigned char stop;
 
-	i = 0;
-	while (i < n)
+	i = -1;
+	dst1 = (char *)dst;
+	src1 = (char const *)src;
+	stop = (unsigned char)c;
+	while (++i < n && dst && src && stop)
 	{
-		if (((char *)dst)[i] == c)
+		if (src1[i] == stop)
 		{
-			((char *)dst)[i] = ((char *)src)[i];
-			return (dst);
+			dst1[i] = src1[i];
+			return (dst + (i + 1));
 		}
 		else
-			((char *)dst)[i] = ((char *)src)[i];
-		i++;
+			dst1[i] = src1[i];
 	}
-	return (dst);
+	return (NULL);
 }

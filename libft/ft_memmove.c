@@ -11,20 +11,28 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+/*Always call memmove with len multiplied by the size of each element eg memmove(dst, src, len * sizeof(elem_type) ) */
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t i;
+	char *dst1;
+	char const *src1;
+	char *tmp;
 
-	i = 0;
-	if (dst < src)
-		return (ft_memcpy(dst, src, len));
-	else
-		i = len - 1;
-	while (i >= 0)
+	i = -1;
+	dst1 = (char *)dst;
+	src1 = (const char *)src;
+	tmp = (char *)malloc(sizeof(char) * len);
+	if (!tmp || !dst1 || !src1 || !len)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i--;
+		return (NULL);
 	}
+	while (i++ < len)
+	{
+		tmp[i] = src1[i];
+		dst1[i] = tmp[i];
+	}
+	free(tmp);
 	return (dst);
 }

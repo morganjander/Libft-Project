@@ -22,8 +22,10 @@ static int	sft_wordlen(char const *s, char c)
 	while (s[i] == c)
 		i++;
 	while (s[i] != c && s[i] != '\0')
+	{
 		i++;
 		len++;
+	}
 	return (len);
 }
 

@@ -15,11 +15,17 @@
 char	*ft_strcat(char *s1, const char *s2)
 {
 	size_t start;
-	size_t len;
+	size_t i;
 
-	start = ft_strlen(s1) - 1;
-	len = ft_strlen(s2);
-	s1 = (char *)ft_memcpy((s1 + start), s2, len);
-	s1[start + len] = '\0';
+	if (!s1 || !s2)
+		return (NULL);
+
+	start = ft_strlen(s1);
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		s1[start++] = s2[i++];
+	}
+	s1[start + i] = '\0';
 	return (s1);
 }
