@@ -15,17 +15,25 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *freshstr;
-	size_t len1;
-	size_t len2;
+	size_t i;
+	size_t j;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	freshstr = ft_strnew(len1 + len2 + 1);
+	if (!s1 || !s2)
+		return (NULL);
+	freshstr = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	i = 0;
+	j = 0;
 	if (!freshstr)
-		return (0);
-	freshstr = (char *)ft_memcpy(freshstr, s1, len1);
-	/*(freshstr + len1) = (char *)ft_memcpy((freshstr + len1), s2, len2);
-	  */
-	freshstr[len1 + len2] = '\0';
+		return (NULL);	
+	while (s1[i])
+		freshstr[i] = s1[i];
+		i++;
+	while (s2[j])
+	{
+		freshstr[i] = s2[j];
+		i++;
+		j++;
+	}
+	freshstr[i] = '\0';
 	return (freshstr);
 }

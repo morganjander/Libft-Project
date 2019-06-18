@@ -14,25 +14,16 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char *freshstr;
-	size_t i;
-	size_t j;
-	size_t len;
-
-	i = 0;
-	j = 0;
-	len = 0;
-	while (ft_iswhitespace(s[i]))
-		i++;
-	while (!(ft_iswhitespace(s[i])))
-	{
-		j++;
-		i++;
-	}
-	len = ft_strlen(s);
-	freshstr = ft_strnew(len);
-	if (!freshstr)
-		return (0);
-	freshstr = (char *)ft_memcpy(freshstr, (s + (i - j)), j);
-	return (freshstr);
+	char const *new;
+	
+	if (!s)
+		return (NULL);
+	while (ft_iswhitespace(*s))
+		s++;
+	if (*s == '\0')
+		return (ft_strnew(0));
+	new = s + ft_strlen(s) - 1;
+	while (ft_iswhitespace(*new))
+		new--;
+	return (ft_strsub(s, 0, new - s + 1));
 }

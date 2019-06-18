@@ -14,16 +14,18 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	if (!dst || !src)
-		return (NULL);
-	dst = (char *)ft_memcpy(dst, src, len);
-	if ((ft_strlen(src) + 1) < len)
+	size_t i;
+
+	i = 0;
+	while (len > i && src[i] != '\0')
 	{
-		while (len > (ft_strlen(src) + 1))
-		{
-			dst[len] = '\0';
-			len--;
-		}
+		dst[i] = src[i];
+		i++;
+	}
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
 	}
 	return (dst);
 }

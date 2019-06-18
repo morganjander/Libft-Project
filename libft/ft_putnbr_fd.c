@@ -14,22 +14,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	unsigned int i;
+
+	i = 0;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
 		n = -n;
 	}
-	if (n == INT_MIN)
-	{
-		ft_putchar_fd('2', fd);
-		n %= 100000000;
-		n = -n;
-	}
-	if (n >= 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
+
+	i = (unsigned int)n;
+	if (i < 10)
+		ft_putchar_fd(i + 48, fd);
 	else
-		ft_putchar_fd(n + '0', fd);
+	{
+		ft_putnbr_fd(i / 10, fd);
+		ft_putchar_fd(i % 10 + 48, fd);
+	}
 }
