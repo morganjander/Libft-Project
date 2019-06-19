@@ -6,7 +6,7 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 12:38:41 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/14 13:05:45 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/19 13:03:50 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	j = 0;
 	k = 0;
-	wordlist = (char **)malloc(sizeof(wordlist) * (sft_wordnum(s, c) + 1));
-	if (!s || !wordlist)
+	if (!s)
+		return (NULL);
+	if (!(wordlist = (char **)malloc(sizeof(wordlist) * (sft_wordnum(s, c)\
+					   	+ 1))))
 		return (NULL);
 	while (i < sft_wordnum(s, c))
 	{
