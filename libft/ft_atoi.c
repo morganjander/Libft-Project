@@ -6,19 +6,16 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 09:12:34 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/19 12:29:41 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/19 15:11:12 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int				i;
+	int				sign;
 	unsigned int	res;
 
 	i = 0;
@@ -39,8 +36,10 @@ int	ft_atoi(const char *str)
 	return (res * sign);
 }
 
-/*int	main(void)
-{
-	printf("%d\n", atoi("2147483648"));
-	printf("%d\n", ft_atoi("2147483648"));			
-}*/
+/*
+**int	main(void)
+**{
+**	printf("%d\n", atoi("2147483648"));
+**	printf("%d\n", ft_atoi("2147483648"));
+**}
+*/

@@ -6,7 +6,7 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 12:38:41 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/19 13:03:50 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/19 15:13:19 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	sft_wordlen(char const *s, char c)
 	return (len);
 }
 
-static int	sft_wordnum(char const *s, char c)
+static int	f(char const *s, char c)
 {
 	int i;
 	int count;
@@ -48,33 +48,30 @@ static int	sft_wordnum(char const *s, char c)
 	return (count);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	char **wordlist;
-	int i;
-	int j;
-	int k;
+	char	**wordlist;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
 	j = 0;
-	k = 0;
 	if (!s)
 		return (NULL);
-	if (!(wordlist = (char **)malloc(sizeof(wordlist) * (sft_wordnum(s, c)\
-					   	+ 1))))
+	if (!(wordlist = (char **)malloc(sizeof(wordlist) * (f(s, c) + 1))))
 		return (NULL);
-	while (i < sft_wordnum(s, c))
+	while (i < f(s, c))
 	{
 		k = 0;
 		wordlist[i] = ft_strnew(sft_wordlen(&s[j], c) + 1);
-		if (!(wordlist[i] = ft_strnew(sft_wordnum(&s[j], c) + 1)))
+		if (!(wordlist[i] = ft_strnew(f(&s[j], c) + 1)))
 			wordlist[i] = NULL;
 		while (s[j] == c)
 			j++;
 		while (s[j] != c && s[j] != '\0' && wordlist[i])
 			wordlist[i][k++] = s[j++];
-		wordlist[i][k] = '\0';
-		i++;
+		wordlist[i++][k] = '\0';
 	}
 	wordlist[i] = 0;
 	return (wordlist);

@@ -6,7 +6,7 @@
 /*   By: mjander <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 12:37:50 by mjander           #+#    #+#             */
-/*   Updated: 2019/06/19 12:50:01 by mjander          ###   ########.fr       */
+/*   Updated: 2019/06/19 14:44:46 by mjander          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *freshstr;
-	size_t i;
-	size_t j;
+	char	*freshstr;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
+	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
 	freshstr = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	i = 0;
-	j = 0;
 	if (!freshstr)
-		return (NULL);	
+		return (NULL);
 	while (s1[i])
 	{
 		freshstr[i] = s1[i];
