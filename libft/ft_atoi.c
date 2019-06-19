@@ -33,21 +33,14 @@ int	ft_atoi(const char *str)
 	}
 	while (ft_isdigit(str[i]))
 	{
-		if (res > INT_MAX / 10 || (res == INT_MAX / 10 && str[i] > '7'))
-		{
-			if (sign == 1)
-				return ((unsigned int)INT_MAX);
-			else
-				return  ((unsigned int)INT_MIN);
-		}
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
 	return (res * sign);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	printf("%d\n", atoi("-2147483649"));
-	printf("%d\n", ft_atoi("-2147483649"));			
-}
+	printf("%d\n", atoi("2147483648"));
+	printf("%d\n", ft_atoi("2147483648"));			
+}*/

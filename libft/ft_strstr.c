@@ -41,12 +41,3 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	}
 	return (NULL);
 }
-/*
-int		main(void)
-{
-	char	buf[] = "goldenenergy";
-
-	printf("%s\n", strstr(buf, "energy"));
-	printf("%s\n", ft_strstr(buf, "energy"));
-	return (0);
-}*/
